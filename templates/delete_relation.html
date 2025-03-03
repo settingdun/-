@@ -1,0 +1,53 @@
+{% extends "navigate.html" %} {% block mainbody %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="/static/js/echarts.js"></script>
+    
+</head>
+<title>删除关系</title>
+<div class="container">
+    <div class="row">
+    <!--head start-->
+    <div class="col-md-12">
+
+        <h3 class="page-header"> 删除关系 - delete relation </h3>
+            <ol class="breadcrumb">
+                <li><a href="\">Home</a></li>
+            </ol>
+    </div>
+    
+    <div class = "col-md-12">
+    	<div class = "panel panel-default">
+			<header class="panel-heading">
+				输入想要删除的关系：
+       		</header>
+       		<div class = "panel-body">
+				<form method="post" action="/delete_relation">
+                    {{ form.csrf_token }}
+					<div class="input-group">
+						{{ form.entity1(class="form-control", placeholder="实体１", style="width:200px;margin:0px 20px;") }}
+						{{ form.relation(class="form-control", placeholder="关系", style="width:200px;margin:0px 20px;") }}
+						{{ form.entity2(class="form-control", placeholder="实体2", style="width:200px;margin:0px 20px;") }}
+						{{ form.submit(class="btn btn-primary", style="background-color:#4592fe;margin:0px 20px;") }}
+					</div>
+                </form>
+			</div>
+		</div>
+	</div>
+	{% if searchResult %}
+	<div class = "col-md-12">
+		<div class = "panel panel-default">
+			<header class = "panel-heading">
+				删除结果：
+			</header>
+			<div class = "panel-body">
+				<div style="padding: 2%">
+					<h2>删除成功！</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% endblock %}

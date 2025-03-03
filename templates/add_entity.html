@@ -1,0 +1,50 @@
+
+
+{% extends "navigate.html" %} {% block mainbody %}
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+
+</head>
+<title>添加实体</title>
+<div class="container">
+    <div class="row">
+    <!-- head start -->
+    <div class="col-md-12">
+        <h3 class="page-header"> 添加实体 - add entity</h3>
+            <ol class="breadcrumb">
+                <li><a href="\">Home</a></li>
+            </ol>
+    </div>
+
+
+    <div class = "col-md-12">
+        <div class="panel panel-default ">
+            <header class = "panel-heading">
+                增加的实体：
+            </header>
+
+            <div class = "panel-body">
+                <!--搜索框-->
+                <form method="post" action="/add">
+                    {{ form.csrf_token }}
+                    <div>
+                        <div class="input-group">
+                            {{ form.entity(class="form-control", placeholder="输入实体名称") }}
+                            {{ form.submit(class="btn btn-primary", style="background-color:#4592fe; margin: 20px 0px;") }}
+                        </div>
+                        {% for message in form.entity.errors %}
+                            <small style="color:#f9002f">{{ message }}</small><br>
+                        {% endfor %}
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    
+    </div>
+</div>
+{% endblock %}

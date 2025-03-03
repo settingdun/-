@@ -1,0 +1,51 @@
+{% extends "navigate.html" %}
+
+{% block mainbody %}
+<div class="row">
+    <!--head start-->
+    <div class="col-md-12">
+        <ol class="breadcrumb">
+            <li><a href="/">肺炎支原体感染知识图谱</a></li>
+        </ol>
+        <h3 class="page-header"> 项目简介 - Project Introduction</h3>
+    </div>
+    <div>
+        <h4>
+            <li style="font-weight: bold; font-size: 90%;">
+                基于neo4j的肺炎支原体感染知识图谱，使用flask构建系统，Echarts可视化。
+            </li>
+            <br>
+            <li style="font-weight: bold; font-size: 90%;">
+                本项目在原项目基础上增加了实体和关系的增加、删除以及修改的功能，使用了我们自己爬取的数据，并构建三元组关系。
+            </li>
+            <br>
+            <li style="font-weight: bold; font-size: 90%;">
+                项目背景为自2020年初以来，全球范围内爆发了COVID-19病毒，这一突发公共卫生事件进一步凸显了呼吸系统疾病研究的重要性。
+            </li>
+        </h4>
+    </div>
+
+    
+
+    <!-- 新增新冠肺炎图片 -->
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-md-6">
+            <div class="thumbnail" style="border: none; background-color: #f8f9fa; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <img src="{{ url_for('static', filename='img/covid19_1.jpg') }}" alt="COVID-19 Image 1" class="img-responsive" style="border-radius: 10px;">
+                <div class="caption" style="text-align: center; margin-top: 10px;">
+                    <p style="font-size: 90%; color: #555;">图1：新冠肺炎病毒结构示意图</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="thumbnail" style="border: none; background-color: #f8f9fa; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <img src="{{ url_for('static', filename='img/covid19_2.jpg') }}" alt="COVID-19 Image 2" class="img-responsive" style="border-radius: 10px;">
+                <div class="caption" style="text-align: center; margin-top: 10px;">
+                    <p style="font-size: 90%; color: #555;">图2：新冠肺炎传播途径示意图</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
